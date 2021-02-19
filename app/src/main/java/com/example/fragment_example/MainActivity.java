@@ -13,10 +13,11 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
-
+    /*Объявление полей*/
     private TextView nameOfNoteOne,nameOfNoteTwo,nameOfNoteThree;
     private EditText currentNoteOne,currentNoteTwo,currentNoteThree;
     private ImageView save;
+    /*поля , хранящие (по моей задумке) в себе содержимое заметок*/
     private StringBuilder buffer_note_one;
     private StringBuilder buffer_note_two;
     private StringBuilder buffer_note_three;
@@ -28,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
         initView();
         addOnClickListener();
     }
-
+    /*Инициализация полей*/
     private void initView(){
         nameOfNoteOne = findViewById(R.id.nameOfFirstNote);
         nameOfNoteTwo = findViewById(R.id.nameOfSecondNote);
@@ -39,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
         save = findViewById(R.id.save);
 
     }
-
+    /*Метод отображения действий*/
     private void addOnClickListener(){
         nameOfNoteOne.setOnClickListener(v -> {
             CurrentNoteOne note_one = new CurrentNoteOne();
@@ -91,6 +92,8 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+
+    /*мои попытки испольцоывать поля StringBuilder в качестве ключа*/
     @Override
     public void onSaveInstanceState(@NonNull Bundle instanceState){
         super.onSaveInstanceState(instanceState);
